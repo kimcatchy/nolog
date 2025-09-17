@@ -72,13 +72,8 @@ export class Page {
         }
 
         // 페이지 URL을 생성합니다.
-        page.pageUrl = `${subDirPath}${
-            page.pageTitle
-                ?.trim()
-                .replace(/[^가-힣\w\s\-_~]/g, '') //한글, 영어, 숫자, 공백, '-', '_', '.', '~'를 제외한 모든 문자 제거
-                .replace(/\s+/g, '-') ?? // 공백을 하이픈으로 치환
-            ''
-        }`;
+        const slugValue = page.properties['slug'] as string;
+        page.pageUrl = `${subDirPath}${slugValue}`;
         page.pageIdx = page.properties['IDX'] as string;
     }
 
