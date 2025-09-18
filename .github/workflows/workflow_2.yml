@@ -19,14 +19,15 @@ jobs:
             changes_detected: ${{ steps.commit_changes.outputs.CHANGES_DETECTED }}
 
         steps:
-            - uses: actions/checkout@v2
+            - uses: actions/checkout@v4
 
             - name: Checkout Blog Repository
-              uses: actions/checkout@v2
+              uses: actions/checkout@v4
               with:
                   repository: ${{ vars.BLOG_REPO }}
                   token: ${{ secrets.GITTOKEN }}
                   path: 'blog-repo'
+                  fetch-depth: 0
 
             - name: Use Node.js
               uses: actions/setup-node@v2
@@ -71,6 +72,11 @@ jobs:
                   git remote set-url origin https://${{ secrets.GITTOKEN }}@github.com/${{ vars.BLOG_REPO }}
                   git config user.name '${{ vars.GIT_USER_NAME }}'
                   git config user.email '${{ vars.GIT_USER_EMAIL }}'
+                  
+                  # 원격 변경사항 확인 및 pull
+                  git fetch origin
+                  git pull origin main --rebase || git pull origin main --allow-unrelated-histories
+                  
                   git add .
                   CHANGES=$(git status --porcelain)
                   if [ -n "$CHANGES" ]; then
