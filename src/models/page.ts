@@ -162,6 +162,8 @@ export class Page {
             if (value) {
                 if (key === 'tags' && Array.isArray(value)) {
                     metadata.push(`tags:\n  - ${value.join('\n  - ')}`);
+                } else if (key === 'categories' && Array.isArray(value)) {
+                    metadata.push(`categories:\n  - ${value.join('\n  - ')}`);
                 } else {
                     // 기타 모든 속성에 대한 처리
                     metadata.push(`${key}: ${JSON.stringify(value)}`);
