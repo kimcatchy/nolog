@@ -236,9 +236,15 @@ export class Page {
                             .join('');
                         break;
                     case 'last_edited_time':
-                        result[key] = new Date(
-                            property.last_edited_time,
-                        ).toISOString(); // 시간 전체를 ISO 8601 형식으로 출력
+                        result[key] = this.formatDateForBlog(property.last_edited_time);
+                        break;
+                    case 'created_time':
+                        // 속성명이 'date'인 경우 date로 매핑
+                        if (key.toLowerCase() === 'date' || key === '생성일' || key === '작성일') {
+                            result['date'] = this.formatDateForBlog(property.created_time);
+                        } else {
+                            result[key] = this.formatDateForBlog(property.created_time);
+                        }
                         break;
                     case 'date':
                         result[key] = property.date.start;
@@ -312,6 +318,28 @@ export class Page {
             console.log(`[page.ts] Page status updated: ${this.pageId}`);
         } catch (error) {
             console.error(`[page.ts] Failed to update page status: ${error}`);
+        }
+    }
+
+    private formatDateForBlog(dateString: string): string {
+        try {
+            // ISO 8601을 한국 표준시(KST)로 변환
+            const dt = new Date(dateString);
+            const kstOffset = 9 * 60; // 한국은 UTC+9
+            const kstTime = new Date(dt.getTime() + kstOffset * 60000);
+            
+            // 2025-09-17 07:00:00+0900 형식으로 포맷팅
+            const year = kstTime.getUTCFullYear();
+            const month = String(kstTime.getUTCMonth() + 1).padStart(2, '0');
+            const day = String(kstTime.getUTCDate()).padStart(2, '0');
+            const hours = String(kstTime.getUTCHours()).padStart(2, '0');
+            const minutes = String(kstTime.getUTCMinutes()).padStart(2, '0');
+            const seconds = String(kstTime.getUTCSeconds()).padStart(2, '0');
+            
+            return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}+0900`;
+        } catch (error) {
+            console.error(`[page.ts] Date formatting error: ${error}`);
+            return dateString; // 실패 시 원본 반환
         }
     }
 }
