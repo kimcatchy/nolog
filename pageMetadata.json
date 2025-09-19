@@ -2,6 +2,147 @@
   "4": {
     "path": "notion-to-blog"
   },
+  "5": {
+    "path": "js-memo"
+  },
+  "6": {
+    "path": "cron"
+  },
+  "7": {
+    "path": "pm2"
+  },
+  "8": {
+    "path": "nginx-custom-error-page"
+  },
+  "9": {
+    "path": "nginx-exclude-path"
+  },
+  "10": {
+    "path": "oci-ssh-port"
+  },
+  "11": {
+    "path": "python-merge-image"
+  },
+  "12": {
+    "path": "python-merge-json"
+  },
+  "13": {
+    "path": "ubuntu-cheat-sheet"
+  },
+  "14": {
+    "path": "c-var-io"
+  },
+  "15": {
+    "path": "c-conditional-statements"
+  },
+  "16": {
+    "path": "prefix-postfix"
+  },
+  "17": {
+    "path": "c-loop"
+  },
+  "18": {
+    "path": "c-types-and-conversion"
+  },
+  "19": {
+    "path": "c-array"
+  },
+  "20": {
+    "path": "data-structure-and-algorithm"
+  },
+  "21": {
+    "path": "c-function"
+  },
+  "22": {
+    "path": "py-basics"
+  },
+  "23": {
+    "path": "py-types-and-function"
+  },
+  "24": {
+    "path": "list-and-set"
+  },
+  "25": {
+    "path": "variable-scope"
+  },
+  "26": {
+    "path": "stack"
+  },
+  "27": {
+    "path": "selection-sort"
+  },
+  "28": {
+    "path": "c-pointer"
+  },
+  "29": {
+    "path": "object-oriented-programming"
+  },
+  "30": {
+    "path": "vscode-c-cpp"
+  },
+  "31": {
+    "path": "queue-and-deque"
+  },
+  "32": {
+    "path": "c-gcd-algorithm"
+  },
+  "33": {
+    "path": "pointer-and-array"
+  },
+  "34": {
+    "path": "leetcode-2704"
+  },
+  "35": {
+    "path": "mode-of-an-array"
+  },
+  "36": {
+    "path": "counter-2"
+  },
+  "37": {
+    "path": "length-of-string"
+  },
+  "38": {
+    "path": "linked-list"
+  },
+  "39": {
+    "path": "dijkstra-algorithm"
+  },
+  "40": {
+    "path": "c-struct"
+  },
+  "41": {
+    "path": "ds-sort-algorithm"
+  },
+  "42": {
+    "path": "preprocesing-and-derived-data-type"
+  },
+  "43": {
+    "path": "ds-search"
+  },
+  "44": {
+    "path": "tree-and-binary-tree"
+  },
+  "45": {
+    "path": "ds-heap"
+  },
+  "46": {
+    "path": "search-tree"
+  },
+  "47": {
+    "path": "ds-graph"
+  },
+  "48": {
+    "path": "weighted-graph-and-minimum-cost"
+  },
+  "49": {
+    "path": "shortest-path-algorithm"
+  },
+  "50": {
+    "path": "cloudflare-registrar-domain-transfer"
+  },
+  "51": {
+    "path": "wiki-js-2"
+  },
   "Owner": {
     "GIT_USER_NAME": "kimcatchy"
   }
