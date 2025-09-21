@@ -143,6 +143,27 @@
   "51": {
     "path": "wiki-js-2"
   },
+  "52": {
+    "path": "complement"
+  },
+  "53": {
+    "path": "complex"
+  },
+  "54": {
+    "path": "proposition-and-argument"
+  },
+  "55": {
+    "path": "logic-gate"
+  },
+  "56": {
+    "path": "boolean-expression-simplification"
+  },
+  "57": {
+    "path": "flip-flop"
+  },
+  "58": {
+    "path": "proof"
+  },
   "Owner": {
     "GIT_USER_NAME": "kimcatchy"
   }
