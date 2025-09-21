@@ -59,7 +59,7 @@ jobs:
               run: |
                   git config user.name '${{ vars.GIT_USER_NAME }}'
                   git config user.email '${{ vars.GIT_USER_EMAIL }}'
-                  git pull origin master --rebase || git pull origin master --allow-unrelated-histories
+                  git pull origin master --rebase --autostash || git pull origin master --allow-unrelated-histories
                   git add .
                   git commit -m "Update metadata" || echo "No changes to commit in current repo"
                   git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ vars.GIT_USER_NAME }}/nolog.git
@@ -75,7 +75,7 @@ jobs:
                   
                   # 원격 변경사항 확인 및 pull
                   git fetch origin
-                  git pull origin main --rebase || git pull origin main --allow-unrelated-histories
+                  git pull origin main --rebase --autostash || git pull origin main --allow-unrelated-histories
 
                   git add .
                   CHANGES=$(git status --porcelain)
